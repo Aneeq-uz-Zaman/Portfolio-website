@@ -17,7 +17,7 @@ function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen pt-32 flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+    <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-dark-primary via-dark-secondary to-dark-tertiary" />
       <div className="absolute inset-0 bg-gradient-radial from-blue-500/20 via-transparent to-pink-500/20 animate-spin-slow" />

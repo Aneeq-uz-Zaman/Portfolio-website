@@ -42,7 +42,7 @@ function ContactPage() {
       label: 'Phone',
       value: '+92 3294865587',
       href: 'tel:+923294865587',
-      description: 'Available 9 AM - 6 PM PKT'
+     
     },
     {
       icon: '🔗',

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 function HomePage() {
   const stats = [
-    { number: '15+', label: 'Projects Completed', icon: '🚀' },
-    { number: '3.74', label: 'CGPA', icon: '🎯' },
+    { number: '17+', label: 'Projects Completed', icon: '🚀' },
+    { number: '3.60', label: 'CGPA', icon: '🎯' },
     { number: '100%', label: 'Client Satisfaction', icon: '⭐' },
     { number: '24/7', label: 'Available', icon: '⏰' }
   ];

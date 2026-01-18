@@ -36,7 +36,7 @@ function EducationPage() {
               </h3>
               <div className="inline-block bg-white/5 border border-neon-blue/50 px-8 py-4 rounded-lg">
                 <span className="text-3xl md:text-4xl font-black bg-gradient-to-r from-neon-blue to-neon-pink text-transparent bg-clip-text">
-                  CGPA: 3.71/4.0
+                  CGPA: 3.60/4.0
                 </span>
               </div>
               <div className="mt-4 text-lg text-gray-300">
@@ -72,7 +72,7 @@ function EducationPage() {
                 <h4 className="text-2xl font-bold text-neon-pink mb-4">Academic Achievements</h4>
                 <ul className="space-y-3">
                   {[
-                    'Strong CGPA 3.71/4.0 in Data Science',
+                    'Strong CGPA 3.60/4.0 in Data Science',
                     'Excellent Performance in ICS (83.8%)',
                     'Outstanding Matric Results (94.4%)',
                     'Computer Science Foundation Since Matric',
@@ -109,7 +109,7 @@ function EducationPage() {
                     <p className="text-lg font-bold text-neon-blue">2024 - 2028</p>
                     <p className="text-xl font-semibold">BS Data Science</p>
                     <p className="text-gray-400">PUCIT (New Campus), Lahore</p>
-                    <p className="text-sm text-neon-blue mt-2">Current CGPA: 3.71/4.0</p>
+                    <p className="text-sm text-neon-blue mt-2">Current CGPA: 3.60/4.0</p>
                     <span className="inline-block mt-2 px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-medium">Currently Enrolled</span>
                   </div>
                 </div>

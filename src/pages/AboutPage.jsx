@@ -2,8 +2,8 @@ import React from 'react';
 
 function AboutPage() {
   const stats = [
-    { number: '3.74', label: 'CGPA', icon: '🎯' },
-    { number: '15+', label: 'Projects Completed', icon: '🚀' },
+    { number: '3.60', label: 'CGPA', icon: '🎯' },
+    { number: '17+', label: 'Projects Completed', icon: '🚀' },
     { number: '1.5+', label: 'Years Experience', icon: '⏱️' },
     { number: '100%', label: 'Client Satisfaction', icon: '⭐' }
   ];

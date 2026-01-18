@@ -109,10 +109,10 @@ function Navbar() {
           
           {/* Mobile Menu */}
           <div className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-            isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            isMenuOpen ? 'max-h-[32rem] opacity-100' : 'max-h-0 opacity-0'
           }`}>
             <div className="mt-4 pt-4 border-t border-white/20">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 gap-2 max-h-[28rem] overflow-y-auto">
                 {navItems.map(item => {
                   const isActive = location.pathname === item.path;
                   return (

@@ -66,14 +66,10 @@ function SkillsPage() {
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-16 px-6 relative overflow-hidden bg-dark-primary">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-dark-primary via-dark-secondary to-dark-tertiary" />
-      
+    <div className="section-shell">
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Title */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-neon-blue to-neon-pink text-transparent bg-clip-text animate-glow">
+          <h1 className="text-4xl md:text-6xl font-black mb-6 heading-gradient">
             Skills & Expertise
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
@@ -81,30 +77,27 @@ function SkillsPage() {
           </p>
         </div>
         
-        {/* Skills Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <div 
               key={categoryIndex}
-              className="bg-white/5 border border-white/10 p-8 rounded-lg shadow-lg hover:shadow-neon-blue hover:-translate-y-2 transition-all duration-500 group"
+              className="glass-card p-8 hover:-translate-y-2 transition-all duration-500 group"
             >
-              {/* Category Header */}
               <div className="flex items-center gap-4 mb-8">
                 <div className="text-4xl group-hover:animate-bounce">
                   {category.icon}
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-neon-blue to-neon-pink text-transparent bg-clip-text">
+                <h3 className="text-2xl md:text-3xl font-bold heading-gradient">
                   {category.title}
                 </h3>
               </div>
-              
-              {/* Skills List */}
+
               <div className="space-y-6">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="group/skill">
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-semibold text-lg text-gray-200">{skill.name}</span>
-                      <span className="text-sm font-mono text-neon-blue">{skill.level}%</span>
+                      <span className="text-sm font-mono text-accent-1">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-black/20 rounded-full h-3 relative overflow-hidden border border-white/10">
                       <div 

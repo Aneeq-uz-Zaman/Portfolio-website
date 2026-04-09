@@ -96,14 +96,10 @@ function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen pt-32 pb-16 px-6 relative overflow-hidden bg-dark-primary">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-dark-primary via-dark-secondary to-dark-tertiary" />
-      
+    <div className="section-shell">
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Title */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-neon-blue to-neon-pink text-transparent bg-clip-text animate-glow">
+          <h1 className="text-4xl md:text-6xl font-black mb-6 heading-gradient">
             Get In Touch
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
@@ -112,59 +108,58 @@ function ContactPage() {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div className="bg-white/5 border border-white/10 p-8 md:p-12 rounded-lg shadow-lg hover:shadow-neon-blue transition-all duration-500">
-            <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-neon-blue to-neon-pink text-transparent bg-clip-text">Send a Message</h2>
+          <div className="glass-card p-8 md:p-12 transition-all duration-500">
+            <h2 className="text-3xl font-bold mb-8 heading-gradient">Send a Message</h2>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-neon-blue font-medium mb-2">Name *</label>
+                  <label className="block text-accent-1 font-medium mb-2">Name *</label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none focus:ring-2 focus:ring-neon-blue/20 transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-[#2ed3b7] focus:outline-none focus:ring-2 focus:ring-[#2ed3b7]/20 transition-all duration-300"
                     placeholder="Your full name"
                   />
                 </div>
                 <div>
-                  <label className="block text-neon-blue font-medium mb-2">Email *</label>
+                  <label className="block text-accent-1 font-medium mb-2">Email *</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none focus:ring-2 focus:ring-neon-blue/20 transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-[#2ed3b7] focus:outline-none focus:ring-2 focus:ring-[#2ed3b7]/20 transition-all duration-300"
                     placeholder="Your email address"
                   />
                 </div>
               </div>
               
               <div>
-                <label className="block text-neon-blue font-medium mb-2">Subject</label>
+                <label className="block text-accent-1 font-medium mb-2">Subject</label>
                 <input
                   type="text"
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none focus:ring-2 focus:ring-neon-blue/20 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-[#2ed3b7] focus:outline-none focus:ring-2 focus:ring-[#2ed3b7]/20 transition-all duration-300"
                   placeholder="What's this about?"
                 />
               </div>
               
               <div>
-                <label className="block text-neon-blue font-medium mb-2">Message *</label>
+                <label className="block text-accent-1 font-medium mb-2">Message *</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
                   required
                   rows="5"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-neon-blue focus:outline-none focus:ring-2 focus:ring-neon-blue/20 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-[#2ed3b7] focus:outline-none focus:ring-2 focus:ring-[#2ed3b7]/20 transition-all duration-300"
                   placeholder="Your message here..."
                 />
               </div>
@@ -173,7 +168,7 @@ function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-neon-blue to-neon-pink text-white font-bold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-[#2ed3b7] to-[#ff8a3d] text-slate-900 font-bold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
@@ -191,7 +186,6 @@ function ContactPage() {
             </form>
           </div>
           
-          {/* Contact Methods */}
           <div className="space-y-6">
             {contactMethods.map((method, index) => (
               <a
@@ -199,13 +193,13 @@ function ContactPage() {
                 href={method.href}
                 target={method.href.startsWith('http') ? '_blank' : undefined}
                 rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="flex items-center gap-6 p-6 bg-white/5 border border-white/10 rounded-lg shadow-lg hover:bg-white/10 hover:border-neon-blue hover:-translate-y-1 transition-all duration-300 group"
+                className="flex items-center gap-6 p-6 glass-card hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 group"
               >
                 <div className="text-4xl group-hover:animate-bounce">
                   {method.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-neon-blue group-hover:text-neon-pink transition-colors duration-300">{method.label}</h3>
+                  <h3 className="text-xl font-bold text-accent-1 group-hover:text-accent-2 transition-colors duration-300">{method.label}</h3>
                   <p className="text-lg text-gray-200">{method.value}</p>
                   <p className="text-sm text-gray-400">{method.description}</p>
                 </div>

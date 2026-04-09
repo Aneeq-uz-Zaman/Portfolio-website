@@ -50,14 +50,10 @@ function HobbiesPage() {
   ];
 
   return (
-    <div className="min-h-screen pt-32 pb-16 px-6 relative overflow-hidden bg-dark-primary">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-dark-primary via-dark-secondary to-dark-tertiary" />
-      
+    <div className="section-shell">
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Title */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-neon-blue to-neon-pink text-transparent bg-clip-text animate-glow">
+          <h1 className="text-4xl md:text-6xl font-black mb-6 heading-gradient">
             Hobbies & Interests
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
@@ -65,31 +61,26 @@ function HobbiesPage() {
           </p>
         </div>
         
-        {/* Hobbies Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {hobbies.map((hobby, index) => (
             <div 
               key={index}
-              className="bg-white/5 border border-white/10 p-6 rounded-lg shadow-lg hover:shadow-neon-blue hover:-translate-y-2 transition-all duration-500 group"
+              className="glass-card p-6 hover:-translate-y-2 transition-all duration-500 group"
             >
-              {/* Hobby Icon */}
               <div className="text-4xl mb-4 group-hover:animate-bounce">
                 {hobby.icon}
               </div>
-              
-              {/* Hobby Title */}
+
               <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-blue transition-colors duration-300">
                 {hobby.title}
               </h3>
-              
-              {/* Hobby Description */}
+
               <p className="text-gray-300 mb-4 leading-relaxed">
                 {hobby.description}
               </p>
-              
-              {/* Activities */}
+
               <div>
-                <h4 className="text-sm font-semibold text-neon-pink mb-2">Activities:</h4>
+                <h4 className="text-sm font-semibold text-accent-2 mb-2">Activities:</h4>
                 <div className="flex flex-wrap gap-2">
                   {hobby.activities.map((activity, i) => (
                     <span 
@@ -105,16 +96,15 @@ function HobbiesPage() {
           ))}
         </div>
         
-        {/* Personal Values Section */}
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center bg-gradient-to-r from-neon-blue to-neon-pink text-transparent bg-clip-text">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center heading-gradient">
             Personal Values
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {personalValues.map((item, index) => (
               <div 
                 key={index}
-                className="bg-white/5 border border-white/10 p-4 rounded-lg text-center hover:shadow-neon-blue transition-all duration-300 group"
+                className="glass-card p-4 text-center transition-all duration-300 group"
               >
                 <div className="text-3xl mb-2 group-hover:animate-bounce">{item.icon}</div>
                 <div className="text-sm font-semibold text-gray-300">{item.value}</div>
@@ -123,9 +113,8 @@ function HobbiesPage() {
           </div>
         </div>
         
-        {/* Fun Facts Section */}
-        <div className="bg-white/5 border border-white/10 p-8 rounded-lg">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center bg-gradient-to-r from-neon-blue to-neon-pink text-transparent bg-clip-text">
+        <div className="glass-card p-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center heading-gradient">
             Fun Facts About Me
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -160,10 +149,9 @@ function HobbiesPage() {
           </div>
         </div>
         
-        {/* Call to Action */}
         <div className="text-center mt-16">
-          <div className="bg-white/5 border border-white/10 p-8 rounded-lg">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-neon-blue to-neon-pink text-transparent bg-clip-text">
+          <div className="glass-card p-8">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 heading-gradient">
               Let's Connect!
             </h3>
             <p className="text-lg text-gray-300 mb-6">
@@ -171,7 +159,7 @@ function HobbiesPage() {
             </p>
             <a 
               href="/contact"
-              className="bg-gradient-to-r from-neon-blue to-neon-pink text-white font-bold py-3 px-8 rounded-full inline-block transition-transform duration-300 hover:scale-105"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold bg-gradient-to-r from-[#2ed3b7] to-[#ff8a3d] text-slate-900 transition-transform duration-300 hover:scale-105"
             >
               Get In Touch
             </a>

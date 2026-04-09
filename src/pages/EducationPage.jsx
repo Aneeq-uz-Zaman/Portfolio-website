@@ -2,14 +2,10 @@ import React from 'react';
 
 function EducationPage() {
   return (
-    <div className="min-h-screen pt-32 pb-16 px-6 relative overflow-hidden bg-dark-primary">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-dark-primary via-dark-secondary to-dark-tertiary" />
-      
+    <div className="section-shell">
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Title */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-neon-blue to-neon-pink text-transparent bg-clip-text animate-glow">
+          <h1 className="text-4xl md:text-6xl font-black mb-6 heading-gradient">
             Education
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
@@ -17,8 +13,7 @@ function EducationPage() {
           </p>
         </div>
         
-        {/* Main Education Card */}
-        <div className="bg-white/5 border border-white/10 p-12 md:p-16 rounded-lg shadow-lg hover:shadow-neon-blue hover:-translate-y-4 transition-all duration-500 group relative overflow-hidden mb-12">
+        <div className="glass-card p-12 md:p-16 hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden mb-12">
           {/* Decorative Elements */}
           <div className="absolute top-6 right-6 text-6xl opacity-20 group-hover:opacity-40 transition-opacity duration-500">
             🎓
@@ -47,7 +42,7 @@ function EducationPage() {
             {/* Academic Highlights */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
               <div className="space-y-6">
-                <h4 className="text-2xl font-bold text-neon-blue mb-4">Core Subjects</h4>
+                    <h4 className="text-2xl font-bold text-accent-1 mb-4">Core Subjects</h4>
                 <ul className="space-y-3">
                   {[
                     'Data Structures & Algorithms',
@@ -61,7 +56,7 @@ function EducationPage() {
                       key={i}
                       className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-300"
                     >
-                      <span className="text-neon-pink text-lg">📚</span>
+                        <span className="text-accent-2 text-lg">📚</span>
                       <span className="text-lg">{subject}</span>
                     </li>
                   ))}
@@ -69,7 +64,7 @@ function EducationPage() {
               </div>
               
               <div className="space-y-6">
-                <h4 className="text-2xl font-bold text-neon-pink mb-4">Academic Achievements</h4>
+                <h4 className="text-2xl font-bold text-accent-2 mb-4">Academic Achievements</h4>
                 <ul className="space-y-3">
                   {[
                     'Strong CGPA 3.60/4.0 in Data Science',
@@ -83,7 +78,7 @@ function EducationPage() {
                       key={i}
                       className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-300"
                     >
-                      <span className="text-neon-blue text-lg">🏆</span>
+                      <span className="text-accent-1 text-lg">🏆</span>
                       <span className="text-lg">{achievement}</span>
                     </li>
                   ))}
@@ -93,9 +88,8 @@ function EducationPage() {
           </div>
         </div>
         
-        {/* Academic Timeline */}
         <div className="mb-16">
-          <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-neon-blue to-neon-pink text-transparent bg-clip-text">Academic Journey</h3>
+          <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center heading-gradient">Academic Journey</h3>
           <div className="relative">
             {/* Timeline Line */}
             <div className="absolute left-1/2 -translate-x-1/2 h-full w-1 bg-white/10" />

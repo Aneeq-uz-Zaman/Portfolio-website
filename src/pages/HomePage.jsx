@@ -34,7 +34,7 @@ function HomePage() {
           </p>
 
           <div className="mt-7 flex flex-wrap justify-center gap-3 rise-up rise-delay-2">
-            {['Available for Freelance', 'MERN + Python Workflow', 'Fast Delivery Mindset'].map((tag) => (
+            {['Available for Freelance', 'FULL STACK DEVELOPER + Python Workflow', 'Fast Delivery Mindset'].map((tag) => (
               <span
                 key={tag}
                 className="px-4 py-2 text-sm font-semibold rounded-full border border-white/20 bg-white/5 text-gray-200"

@@ -1,15 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-1: #071018;
+  --bg-2: #0b1b26;
+  --bg-3: #102a38;
+  --accent-1: #2ed3b7;
+  --accent-2: #ff8a3d;
+  --text-main: #e8f1f7;
+  --text-muted: #9db2c2;
+  --card-bg: rgba(10, 26, 38, 0.6);
+  --card-border: rgba(168, 198, 219, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background: #0A0A1A;
-  color: white;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(46, 211, 183, 0.13), transparent 34%),
+    radial-gradient(circle at 88% 22%, rgba(255, 138, 61, 0.18), transparent 30%),
+    linear-gradient(135deg, var(--bg-1), var(--bg-2) 52%, var(--bg-3));
+  color: var(--text-main);
   min-height: 100vh;
-  /* Ensure content doesn't hide behind fixed navbar */
-  padding-top: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Sora', 'Space Grotesk', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(46, 211, 183, 0.3);
+  color: #ffffff;
+}
+
+.app-noise::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.12;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.4) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+.section-shell {
+  min-height: 100vh;
+  padding: 8rem 1.5rem 4rem;
+  position: relative;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+}
+
+.heading-gradient {
+  background: linear-gradient(105deg, #8cf1de, #ffd2b3 60%, #ffe19a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.rise-up {
+  animation: riseUp 700ms ease both;
+}
+
+.rise-delay-1 {
+  animation-delay: 120ms;
+}
+
+.rise-delay-2 {
+  animation-delay: 220ms;
+}
+
+.rise-delay-3 {
+  animation-delay: 320ms;
+}
+
+@keyframes riseUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Additional utilities for better navbar positioning */
@@ -223,6 +321,13 @@ body {
 .bg-dark-tertiary { background-color: #16213E; }
 .text-neon-blue { color: #00d4ff; }
 .text-neon-pink { color: #ff0080; }
+
+.text-accent-1 { color: var(--accent-1); }
+.text-accent-2 { color: var(--accent-2); }
+.bg-accent-1\/20 { background-color: rgba(46, 211, 183, 0.2); }
+.bg-accent-2\/20 { background-color: rgba(255, 138, 61, 0.2); }
+.border-accent-1\/40 { border-color: rgba(46, 211, 183, 0.4); }
+.border-accent-2\/40 { border-color: rgba(255, 138, 61, 0.4); }
 
 .bg-gradient-to-br { 
   background: linear-gradient(135deg, #0A0A1A 0%, #1A1A2E 50%, #16213E 100%); 

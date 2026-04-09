@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ProjectsPage() {
   const projects = [
@@ -7,89 +8,96 @@ function ProjectsPage() {
       description: 'Automated web scraping tool for real estate listings using Python and Selenium',
       technologies: ['Python', 'Selenium', 'Pandas', 'BeautifulSoup'],
       status: 'Completed',
-      icon: '🏠'
+      category: 'Automation'
     },
     {
       title: 'Portfolio Website',
       description: 'Modern, responsive portfolio website built with React and Tailwind CSS',
       technologies: ['React', 'Tailwind CSS', 'Vite', 'JavaScript'],
       status: 'Completed',
-      icon: '💻'
+      category: 'Frontend'
     },
     {
       title: 'Automated Report Generator',
       description: 'Excel/CSV report generation system with custom formatting and data analysis',
       technologies: ['Python', 'Pandas', 'Excel API', 'Data Processing'],
       status: 'Completed',
-      icon: '📈'
+      category: 'Data Tooling'
     },
     {
       title: 'App for Software Agency in MERN',
       description: 'Full-stack web application for managing software projects and teams',
       technologies: ['MongoDB', 'Express.js', 'React', 'Node.js'],
       status: 'Completed',
-      icon: '🛠️'
+      category: 'Full Stack'
     },
     {
       title: 'MERN PasteApp',
       description: 'Interactive dashboard for data visualization and analysis',
       technologies: ['React', 'MongoDB', 'Express.js', 'Node.js'],
       status: 'In Progress',
-      icon: '📊'
+      category: 'Product'
+    },
+    {
+      title: 'POS Management System',
+      description: 'Point-of-sale platform for inventory, billing, receipts, and sales tracking for retail stores.',
+      technologies: ['React', 'Node.js', 'Express.js', 'MongoDB'],
+      status: 'Completed',
+      category: 'Business App'
     },
     {
       title: 'Tic-tac-toe Game in C++',
       description: 'A simple console-based Tic-tac-toe game implemented in C++',
       technologies: ['C++', 'OOP', 'Game Development'],
       status: 'Completed',
-      icon: '📊'
+      category: 'Systems'
     }
   ];
 
   return (
-    <div className="min-h-screen pt-32 pb-16 px-6 relative overflow-hidden bg-dark-primary">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-dark-primary via-dark-secondary to-dark-tertiary" />
-      
+    <div className="section-shell">
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Title */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-neon-blue to-neon-pink text-transparent bg-clip-text animate-glow">
+          <h1 className="text-4xl md:text-6xl font-black mb-6 heading-gradient rise-up">
             My Projects
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-            A showcase of my work in automation, data science, and web development
+          <p className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto rise-up rise-delay-1">
+            20+ shipped projects across automation, web apps, data tooling, and business software
           </p>
         </div>
-        
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 rise-up rise-delay-2">
           {projects.map((project, index) => (
-            <div 
+            <article
               key={index}
-              className="bg-white/5 border border-white/10 p-6 rounded-lg shadow-lg hover:shadow-neon-blue hover:-translate-y-2 transition-all duration-500 group"
+              className="glass-card p-6 transition-all duration-500 hover:-translate-y-2"
             >
-              {/* Project Icon */}
-              <div className="text-4xl mb-4 group-hover:animate-bounce">
-                {project.icon}
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-xs uppercase tracking-widest text-accent-1 bg-accent-1/20 px-3 py-1 rounded-full border border-accent-1/40">
+                  {project.category}
+                </span>
+                <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                  project.status === 'Completed'
+                    ? 'bg-accent-1/20 text-accent-1 border border-accent-1/40'
+                    : 'bg-accent-2/20 text-accent-2 border border-accent-2/40'
+                }`}>
+                  {project.status}
+                </span>
               </div>
-              
-              {/* Project Title */}
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-blue transition-colors duration-300">
+
+              <h3 className="text-xl font-bold text-white mb-3">
                 {project.title}
               </h3>
-              
-              {/* Project Description */}
+
               <p className="text-gray-300 mb-4 leading-relaxed">
                 {project.description}
               </p>
-              
-              {/* Technologies */}
+
               <div className="mb-4">
-                <h4 className="text-sm font-semibold text-neon-pink mb-2">Technologies Used:</h4>
+                <h4 className="text-sm font-semibold text-accent-2 mb-2">Tech Stack</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, i) => (
-                    <span 
+                    <span
                       key={i}
                       className="px-2 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-medium text-gray-300"
                     >
@@ -98,36 +106,27 @@ function ProjectsPage() {
                   ))}
                 </div>
               </div>
-              
-              {/* Status */}
-              <div className="flex items-center justify-between">
-                <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                  project.status === 'Completed' 
-                    ? 'bg-green-500/20 text-green-400' 
-                    : 'bg-yellow-500/20 text-yellow-400'
-                }`}>
-                  {project.status}
-                </span>
-              </div>
-            </div>
+
+              <div className="h-px bg-white/10 my-4" />
+              <p className="text-sm text-gray-400">Built with a focus on reliability, speed, and maintainability.</p>
+            </article>
           ))}
         </div>
-        
-        {/* Call to Action */}
+
         <div className="text-center mt-16">
-          <div className="bg-white/5 border border-white/10 p-8 rounded-lg">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-neon-blue to-neon-pink text-transparent bg-clip-text">
+          <div className="glass-card p-8 rise-up rise-delay-3">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 heading-gradient">
               Have a Project in Mind?
             </h3>
             <p className="text-lg text-gray-300 mb-6">
               I'm always excited to work on new challenges and innovative solutions.
             </p>
-            <a 
-              href="/contact"
-              className="bg-gradient-to-r from-neon-blue to-neon-pink text-white font-bold py-3 px-8 rounded-full inline-block transition-transform duration-300 hover:scale-105"
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold bg-gradient-to-r from-[#2ed3b7] to-[#ff8a3d] text-slate-900 transition-transform duration-300 hover:scale-105"
             >
               Let's Collaborate
-            </a>
+            </Link>
           </div>
         </div>
       </div>

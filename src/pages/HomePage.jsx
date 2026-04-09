@@ -3,142 +3,117 @@ import { Link } from 'react-router-dom';
 
 function HomePage() {
   const stats = [
-    { number: '17+', label: 'Projects Completed', icon: '🚀' },
-    { number: '3.60', label: 'CGPA', icon: '🎯' },
-    { number: '100%', label: 'Client Satisfaction', icon: '⭐' },
-    { number: '24/7', label: 'Available', icon: '⏰' }
+    { number: '20+', label: 'Projects Completed' },
+    { number: '3.60', label: 'Current CGPA' },
+    { number: '100%', label: 'Delivery Commitment' },
+    { number: '24/7', label: 'Problem Solving Mode' }
   ];
 
   const featuredSkills = [
-    { name: 'Python', icon: '🐍' },
-    { name: 'Web Development', icon: '🌐' },
-    { name: 'Web Automation', icon: '⚡' },
-    { name: 'Data Science', icon: '📊' }
+    { name: 'Python Automation', level: 93 },
+    { name: 'MERN Development', level: 88 },
+    { name: 'Data Science', level: 84 },
+    { name: 'Web Scraping', level: 91 }
   ];
 
   return (
-    <div className="min-h-screen pt-20 sm:pt-24 md:pt-28 flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
-      {/* Enhanced Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-dark-primary via-dark-secondary to-dark-tertiary" />
-      <div className="absolute inset-0 bg-gradient-radial from-blue-500/20 via-transparent to-pink-500/20 animate-spin-slow" />
-      
-      {/* Enhanced Floating Particles */}
-      <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-neon-blue rounded-full animate-ping" />
-      <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-neon-pink rounded-full animate-pulse" />
-      <div className="absolute top-1/2 left-1/6 w-1 h-1 bg-white rounded-full animate-bounce" />
-      <div className="absolute top-1/3 right-1/6 w-2 h-2 bg-neon-blue/50 rounded-full animate-ping delay-1000" />
-      <div className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-neon-pink/70 rounded-full animate-pulse delay-500" />
-      
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Main Hero Section */}
-        <div className="mb-16">
-          {/* Profile Image Placeholder */}
-          <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 bg-gradient-to-br from-neon-blue to-neon-pink rounded-full p-1">
-            <div className="w-full h-full bg-dark-primary rounded-full flex items-center justify-center text-4xl">
-              👨‍💻
-            </div>
-          </div>
-          
-          {/* Main Title */}
-          <h1 className="text-1xl md:text-6xl lg:text-8xl font-black mb-6 bg-gradient-to-r from-neon-blue to-neon-pink text-transparent bg-clip-text animate-glow">
+    <div className="section-shell flex items-center text-center">
+      <div className="relative z-10 max-w-7xl mx-auto w-full">
+        <div className="mb-14 rise-up">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight heading-gradient">
             Muhammad Aneeq Uz Zaman
           </h1>
-          
-          {/* Subtitle */}
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-200 mb-6 opacity-90">
-            BS Data Science Student | Web Developer | Python Developer 
+
+          <h2 className="mt-5 text-lg sm:text-xl md:text-2xl font-semibold text-gray-200 rise-up rise-delay-1">
+            Data Science Student, Web Developer, and Automation Builder
           </h2>
-          
-          {/* Quote */}
-          <p className="text-lg md:text-xl lg:text-2xl text-neon-blue font-medium mb-8 animate-pulse">
-            "Transforming ideas into intelligent solutions through code and data"
+
+          <p className="mt-6 text-base md:text-lg max-w-3xl mx-auto text-gray-300 rise-up rise-delay-2">
+            I design practical digital products that combine robust engineering with data-driven thinking.
+            From dashboards to automation pipelines, I build systems that move work faster.
           </p>
+
+          <div className="mt-7 flex flex-wrap justify-center gap-3 rise-up rise-delay-2">
+            {['Available for Freelance', 'MERN + Python Workflow', 'Fast Delivery Mindset'].map((tag) => (
+              <span
+                key={tag}
+                className="px-4 py-2 text-sm font-semibold rounded-full border border-white/20 bg-white/5 text-gray-200"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
-        
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-14 rise-up rise-delay-2">
           {stats.map((stat, index) => (
-            <div key={index} className="bg-white/5 border border-white/10 p-6 rounded-lg backdrop-blur-lg hover:shadow-neon-blue transition-all duration-300 group">
-              <div className="text-3xl mb-3 group-hover:animate-bounce">{stat.icon}</div>
-              <div className="text-2xl md:text-3xl font-bold text-neon-blue mb-2">{stat.number}</div>
-              <div className="text-sm md:text-base text-gray-300">{stat.label}</div>
+            <div key={index} className="glass-card p-5 md:p-6 hover:-translate-y-1 transition-all duration-300">
+              <div className="text-2xl md:text-3xl font-bold heading-gradient mb-1">{stat.number}</div>
+              <div className="text-xs md:text-sm text-gray-300 tracking-wide">{stat.label}</div>
             </div>
           ))}
         </div>
-        
-        {/* Featured Skills */}
-        <div className="mb-16">
-          <h3 className="text-2xl md:text-3xl font-bold mb-8 bg-gradient-to-r from-neon-blue to-neon-pink text-transparent bg-clip-text">
-            Core Expertise
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div className="glass-card p-6 md:p-8 mb-14 rise-up rise-delay-3">
+          <h3 className="text-2xl md:text-3xl font-bold mb-7 heading-gradient">Core Expertise</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {featuredSkills.map((skill, index) => (
-              <div key={index} className="bg-white/5 border border-white/10 p-6 rounded-lg backdrop-blur-lg hover:shadow-neon-blue transition-all duration-300 group">
-                <div className="text-3xl mb-3 group-hover:animate-bounce">{skill.icon}</div>
-                <div className="font-semibold text-white mb-2">{skill.name}</div>
-                <div className="w-full bg-white/20 rounded-full h-2">
-                  <div 
-                    className="bg-gradient-to-r from-neon-blue to-neon-pink h-2 rounded-full transition-all duration-1000"
+              <div key={index} className="text-left">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-semibold text-white">{skill.name}</span>
+                  <span className="text-sm text-gray-300">{skill.level}%</span>
+                </div>
+                <div className="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                  <div
+                    className="h-2 rounded-full bg-gradient-to-r from-[#2ed3b7] to-[#ff8a3d]"
                     style={{ width: `${skill.level}%` }}
                   />
                 </div>
-                <div className="text-xs text-gray-400 mt-1">{skill.level}%</div>
               </div>
             ))}
           </div>
         </div>
-        
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-          <Link 
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 rise-up rise-delay-3">
+          <Link
             to="/contact"
-            className="bg-gradient-to-r from-neon-blue to-neon-pink text-white font-bold text-lg px-8 py-4 rounded-full transition-transform duration-300 hover:scale-110 shadow-lg hover:shadow-neon-blue"
+            className="px-8 py-3 rounded-full font-bold bg-gradient-to-r from-[#2ed3b7] to-[#ff8a3d] text-slate-900 hover:scale-105 transition-transform duration-300"
           >
-            🚀 Let's Work Together
+            Start a Conversation
           </Link>
-          
-          <Link 
+
+          <Link
             to="/projects"
-            className="border-2 border-neon-blue text-neon-blue font-bold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-110 hover:bg-neon-blue/10 hover:shadow-neon-blue"
+            className="px-8 py-3 rounded-full font-bold border border-white/25 text-white hover:bg-white/10 hover:scale-105 transition-all duration-300"
           >
-            🎯 View My Work
+            Explore Projects
           </Link>
-          
-          <a 
-            href="/resume.pdf" 
+
+          <a
+            href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-2 border-neon-pink text-neon-pink font-bold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-110 hover:bg-neon-pink/10 hover:shadow-neon-pink"
+            className="px-8 py-3 rounded-full font-bold border border-accent-2/40 text-accent-2 hover:bg-accent-2/20 hover:scale-105 transition-all duration-300"
           >
-            📄 Download Resume
+            Download Resume
           </a>
         </div>
-        
-        {/* Quick Links */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 rise-up rise-delay-3">
           {[
-            { to: '/about', icon: '👨‍💻', label: 'About Me' },
-            { to: '/experience', icon: '💼', label: 'Experience' },
-            { to: '/skills', icon: '⚡', label: 'Skills' },
-            { to: '/education', icon: '🎓', label: 'Education' }
+            { to: '/about', label: 'About' },
+            { to: '/experience', label: 'Experience' },
+            { to: '/skills', label: 'Skills' },
+            { to: '/education', label: 'Education' }
           ].map((link, index) => (
-            <Link 
+            <Link
               key={index}
               to={link.to}
-              className="bg-white/5 border border-white/10 p-4 rounded-lg backdrop-blur-lg hover:shadow-neon-blue transition-all duration-300 hover:-translate-y-1 group"
+              className="glass-card p-4 md:p-5 text-sm md:text-base font-semibold text-gray-200 hover:text-white hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="text-2xl mb-2 group-hover:animate-bounce">{link.icon}</div>
-              <div className="text-sm font-medium text-gray-300">{link.label}</div>
+              {link.label}
             </Link>
           ))}
-        </div>
-        
-        {/* Scroll Down Indicator */}
-        <div className="animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full mx-auto flex justify-center">
-            <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse" />
-          </div>
-          <p className="text-xs text-gray-400 mt-2">Scroll to explore</p>
         </div>
       </div>
     </div>

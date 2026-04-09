@@ -9,6 +9,7 @@ function ContactPage() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
 
   const handleInputChange = (e) => {
     setFormData({
@@ -20,13 +21,47 @@ function ContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert('Message sent successfully! I\'ll get back to you soon.');
+    setSubmitStatus({ type: '', message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const contentType = response.headers.get('content-type') || '';
+      let data = {};
+
+      if (contentType.includes('application/json')) {
+        data = await response.json();
+      } else {
+        const rawText = await response.text();
+        data = { error: rawText.slice(0, 180) };
+      }
+
+      if (!response.ok) {
+        throw new Error(data.error || `Failed to send message. Status ${response.status}`);
+      }
+
+      setSubmitStatus({
+        type: 'success',
+        message: 'Message sent successfully. I will get back to you soon.'
+      });
       setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 2000);
+    } catch (error) {
+      const fallbackMessage =
+        'Unable to send message right now. If you are testing locally, run with Vercel so /api routes are available.';
+
+      setSubmitStatus({
+        type: 'error',
+        message: error.message || fallbackMessage
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [
@@ -143,6 +178,16 @@ function ContactPage() {
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </div>
+
+              {submitStatus.message && (
+                <p
+                  className={`text-sm font-medium ${
+                    submitStatus.type === 'success' ? 'text-green-400' : 'text-red-400'
+                  }`}
+                >
+                  {submitStatus.message}
+                </p>
+              )}
             </form>
           </div>
           
@@ -152,8 +197,8 @@ function ContactPage() {
               <a
                 key={index}
                 href={method.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={method.href.startsWith('http') ? '_blank' : undefined}
+                rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className="flex items-center gap-6 p-6 bg-white/5 border border-white/10 rounded-lg shadow-lg hover:bg-white/10 hover:border-neon-blue hover:-translate-y-1 transition-all duration-300 group"
               >
                 <div className="text-4xl group-hover:animate-bounce">

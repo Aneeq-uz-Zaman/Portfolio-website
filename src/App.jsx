@@ -15,14 +15,15 @@ import ContactPage from './pages/ContactPage';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen font-sans text-white relative overflow-x-hidden">
-        {/* Global Background */}
-        <div className="fixed inset-0 bg-gradient-to-br from-dark-primary via-dark-secondary to-dark-tertiary -z-50" />
+      <div className="min-h-screen text-white relative overflow-x-hidden app-noise">
+        <div className="fixed inset-0 -z-50 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#061018] via-[#0b1b26] to-[#112838]" />
+          <div className="absolute -top-40 -left-40 h-[26rem] w-[26rem] rounded-full bg-accent-1/20 blur-3xl animate-pulse" />
+          <div className="absolute -bottom-48 -right-44 h-[28rem] w-[28rem] rounded-full bg-accent-2/20 blur-3xl animate-pulse" />
+        </div>
         
-        {/* Navbar */}
         <Navbar />
         
-        {/* Main Content */}
         <main className="relative z-10">
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -37,29 +38,27 @@ function App() {
           </Routes>
         </main>
         
-        {/* Back to Top Button */}
         <BackToTop />
         
-        {/* Footer */}
-        <footer className="relative z-10 bg-black/30 backdrop-blur-lg border-t border-white/10 py-8 px-6 text-center">
-          <div className="max-w-6xl mx-auto">
-            <p className="text-gray-400 text-lg">
-              © 2025 Muhammad Aneeq Uz Zaman. All rights reserved. ✨
+        <footer className="relative z-10 py-10 px-6 text-center border-t border-white/10 bg-black/20 backdrop-blur-xl">
+          <div className="max-w-6xl mx-auto glass-card p-6">
+            <p className="text-gray-300 text-base md:text-lg">
+              © 2026 Muhammad Aneeq Uz Zaman. Crafted with React and motion-first UI design.
             </p>
-            <div className="flex justify-center gap-6 mt-4">
+            <div className="flex justify-center gap-4 mt-4">
               {[
-                { icon: '📧', href: 'mailto:aneeq24dec@gmail.com' },
-                { icon: '💻', href: 'https://github.com/Aneeq-uz-Zaman' },
-                { icon: '🔗', href: 'https://linkedin.com/in/aneeq-uz-zaman' }
+                { label: 'Email', href: 'mailto:aneeq24dec@gmail.com' },
+                { label: 'GitHub', href: 'https://github.com/Aneeq-uz-Zaman' },
+                { label: 'LinkedIn', href: 'https://linkedin.com/in/aneeq-uz-zaman' }
               ].map((social, i) => (
                 <a
                   key={i}
                   href={social.href}
                   target={social.href.startsWith('http') ? '_blank' : undefined}
                   rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="text-2xl hover:text-neon-blue transition-colors duration-300 hover:scale-125 transform"
+                  className="px-4 py-2 rounded-full border border-white/20 text-sm font-semibold text-gray-200 hover:text-white hover:border-white/40 hover:bg-white/10 transition-all duration-300"
                 >
-                  {social.icon}
+                  {social.label}
                 </a>
               ))}
             </div>
